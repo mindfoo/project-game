@@ -19,7 +19,7 @@ class ObstaclePipes {
       this.image.src = "./images/corona.png";
     }
     drawObstacle() {
-      this.ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+      this.ctx.drawImage(this.image, this.x, this.y, this.width, this.height, 100, 100, 100, 100);
     }
     update() {
       this.x -= this.speed;

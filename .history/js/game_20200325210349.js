@@ -48,7 +48,7 @@ class Game {
         this.gameStatus = "game-over";
       }
 
-      if (obstacle.x + obstacle.width < 0) {
+      if (obstacle.x+obstacle < 0) {
         this.obstaclesArray.shift();
         this.scoreArray.push(1);
         console.log(this.scoreArray);
@@ -60,7 +60,7 @@ class Game {
   checkCollision(player, object) {
     if (object) {
       return (
-        player.x < object.x + object.width &&
+        player.x < object.x - object.width &&
         player.x + player.width > object.x &&
         player.y < object.y + object.height &&
         player.y + player.height > object.y

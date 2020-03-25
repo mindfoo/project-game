@@ -19,7 +19,7 @@ class infiniteBackground {
         // draw image 1 
         this.ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         // draw image 2
-        this.ctx.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
+        this.ctx.drawImage(this.image, this.x + this.game.width, this.y, this.width, this.height);
     
         // update image height 
         this.x -= this.scrollSpeed; 

@@ -8,8 +8,8 @@ class ObstaclePipes {
   
       //if (this.y < 20) this.x += 20;
       //if (this.x > this.game.width - 20) this.x -= 30;
-      this.height = 452/5;
-      this.width = 471/5;
+      this.height = 2177/5;
+      this.width = 1587/5;
   
       this.speed = 3;
   
@@ -19,7 +19,7 @@ class ObstaclePipes {
       this.image.src = "./images/corona.png";
     }
     drawObstacle() {
-      this.ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+      this.ctx.drawImage(this.image, this.x, this.y, this.width, this.height, 100, 100, 100, 100);
     }
     update() {
       this.x -= this.speed;

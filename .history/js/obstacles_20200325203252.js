@@ -8,15 +8,16 @@ class ObstaclePipes {
   
       //if (this.y < 20) this.x += 20;
       //if (this.x > this.game.width - 20) this.x -= 30;
-      this.height = 452/5;
-      this.width = 471/5;
+      this.height = Math.floor(Math.random() * 200) + 70;
+      this.width = 1587;
   
       this.speed = 3;
   
       this.position = [];
   
       this.image = new Image();
-      this.image.src = "./images/corona.png";
+      this.image.src = "./images/virus-sprite.png";
+      this.image.src = "./images/virus-sprite.png";
     }
     drawObstacle() {
       this.ctx.drawImage(this.image, this.x, this.y, this.width, this.height);

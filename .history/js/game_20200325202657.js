@@ -2,8 +2,10 @@ class Game {
   constructor(canvas) {
     this.canvas = canvas;
     this.ctx = canvas.getContext("2d");
-    this.width = canvas.width;
-    this.height = canvas.height;
+    //this.width = canvas.width;
+    //this.height = canvas.height;
+    this.width = window.innerWidth;
+    this.height = window.innerHeight + "px";   
 
     this.background = new infiniteBackground(this);
     //this.obstacle = new ObstaclePipes(this);
@@ -48,7 +50,7 @@ class Game {
         this.gameStatus = "game-over";
       }
 
-      if (obstacle.x + obstacle.width < 0) {
+      if (obstacle.x < 0) {
         this.obstaclesArray.shift();
         this.scoreArray.push(1);
         console.log(this.scoreArray);
@@ -73,7 +75,7 @@ class Game {
     this.ctx.fillStyle = 'rgba(255, 165, 0, 0.5)';
     this.ctx.fillRect(0, 0, this.width, this.height);
     this.ctx.fillStyle = '#222222';
-    this.ctx.font = "italic small-caps bold 12px Sen";
+    this.ctx.font = "italic small-caps bold 12px arial";
 
     this.ctx.fillText(`GAME OVER!`, this.width / 2, this.height - 80);
     this.ctx.fillText(

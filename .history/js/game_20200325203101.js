@@ -2,8 +2,10 @@ class Game {
   constructor(canvas) {
     this.canvas = canvas;
     this.ctx = canvas.getContext("2d");
-    this.width = canvas.width;
-    this.height = canvas.height;
+    //this.width = canvas.width;
+    //this.height = canvas.height;
+    this.width = window.innerWidth;
+    this.height = window.innerHeight;   
 
     this.background = new infiniteBackground(this);
     //this.obstacle = new ObstaclePipes(this);
@@ -48,7 +50,7 @@ class Game {
         this.gameStatus = "game-over";
       }
 
-      if (obstacle.x + obstacle.width < 0) {
+      if (obstacle.x < 0) {
         this.obstaclesArray.shift();
         this.scoreArray.push(1);
         console.log(this.scoreArray);

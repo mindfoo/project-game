@@ -17,7 +17,8 @@ html, body {
 
 canvas{
   z-index: 1;
-  background: #758888;
+  background: #2f3736;
+  z-index: 1;
 }
 
 body > * {

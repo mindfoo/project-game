@@ -5,9 +5,9 @@ class infiniteBackground {
 
         this.x = 0;
         this.y = 0;
-        this.width = 150;//900
-        this.height = 150;//504
-        this.scrollSpeed = .5;
+        this.width = 225;//900
+        this.height = 225;//504
+        this.scrollSpeed = 1;
 
         this.image = new Image();
         
@@ -15,11 +15,14 @@ class infiniteBackground {
     
     }
     drawBackground(){
+        var pattern = ctx.createPattern(img, 'repeat');
+  ctx.fillStyle = pattern;
+  ctx.fillRect(0, 0, 300, 300);
         //console.log("drawing bg" + this.scrollSpeed)
         // draw image 1 
         this.ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         // draw image 2
-        this.ctx.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
+        this.ctx.drawImage(this.image, this.x + this.game.width, this.y, this.width, this.height);
     
         // update image height 
         this.x -= this.scrollSpeed; 

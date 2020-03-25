@@ -17,7 +17,8 @@ html, body {
 
 canvas{
   z-index: 1;
-  background: #758888;
+  background: #2f3736;
+  z-index: 1;
 }
 
 body > * {
@@ -36,10 +37,7 @@ body button {
   color: #fff;
   padding: 20px 30px;
   border: 0;
+  /* position: absolute; */
+  /* top: 10vh; */
   margin: 40px;
-}
-
-#game-board {
-  display: flex;
-  flex-direction: column;
 }
