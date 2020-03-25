@@ -61,7 +61,7 @@ class Game {
     if (object) {
       return (
         player.x < object.x + object.width/2 &&
-        player.x + player.width > object.x + object.width/2 &&
+        player.x + player.width > object.x &&
         player.y < object.y + object.height/2 &&
         player.y + player.height > object.y
       );

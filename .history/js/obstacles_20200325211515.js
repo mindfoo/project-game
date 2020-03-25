@@ -3,11 +3,13 @@ class ObstaclePipes {
       this.game = game;
       this.ctx = game.ctx;
   
+      this.x = this.game.width;
+      this.y = Math.floor((Math.random() * this.game.height) - 2 * this.height);
+  
+      //if (this.y < 20) this.x += 20;
+      //if (this.x > this.game.width - 20) this.x -= 30;
       this.height = 452/5;
       this.width = 471/5;
-
-      this.x = this.game.width;
-      this.y = Math.floor((Math.random() * (this.game.height-this.height)));
   
       this.speed = 3;
   

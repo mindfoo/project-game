@@ -7,7 +7,7 @@ class ObstaclePipes {
       this.width = 471/5;
 
       this.x = this.game.width;
-      this.y = Math.floor((Math.random() * (this.game.height-this.height)));
+      this.y = Math.floor((Math.random() * this.game.height-this.height));
   
       this.speed = 3;
   
