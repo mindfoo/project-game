@@ -3,7 +3,7 @@ class Obstacles {
       this.game = game;
       this.ctx = game.ctx;
   
-      this.x = canvas.width;
+      this.x = this.game.width;
       this.y = Math.round(Math.random()*this.game.height);
 
       this.height = 452;
@@ -20,6 +20,7 @@ class Obstacles {
     }
     update() {
       this.x -= this.speed;
+      console.log(Math.round(Math.random()*this.game.height))
     }
   }
   

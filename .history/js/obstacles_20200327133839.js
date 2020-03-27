@@ -1,25 +1,24 @@
-class Obstacles {
+class ObstaclePipes {
     constructor(game) {
       this.game = game;
       this.ctx = game.ctx;
   
-      this.x = canvas.width;
-      this.y = Math.round(Math.random()*this.game.height);
-
       this.height = 452;
       this.width = 471;
 
       this.speed = 3;
+  
       this.position = [];
   
       this.image = new Image();
       this.image.src = "./images/corona.png";
     }
     drawObstacle() {
-      this.ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+      console.log(this.destX, this.destY)
+      this.ctx.drawImage(this.image, this.x,this.y,this.srcW,this.srcH,this.destX,this.destY,this.destW,this.destH);
     }
     update() {
-      this.x -= this.speed;
+      this.destX -= this.speed;
     }
   }
   

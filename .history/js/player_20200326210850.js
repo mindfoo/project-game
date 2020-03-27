@@ -38,9 +38,9 @@ class Player {
     if (this.y >= this.game.height - this.height) {
       this.speedY = 0;
     }
-    if (this.x >= this.game.width) {
+    if (this.x >= this.game.width - this.width) {
       this.speedX = 0;
-      this.x = 0;
+      this.y = 0;
     }
   }
 

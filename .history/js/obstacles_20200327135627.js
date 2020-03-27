@@ -20,6 +20,7 @@ class Obstacles {
     }
     update() {
       this.x -= this.speed;
+      console.log(canvas.width)
     }
   }
   

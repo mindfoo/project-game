@@ -6,7 +6,7 @@ class Game {
     this.height = window.innerHeight;
 
     this.background = new infiniteBackground(this);
-    this.obstacle = new Obstacles(this);
+    //this.obstacle = new ObstaclePipes(this);
     this.animationId;
 
     this.player = new Player(this);
@@ -68,10 +68,10 @@ class Game {
   checkCollision(player, object) {
     if (object) {
       return (
-        player.x < object.destX + object.destW / 2 &&
-        player.x + player.width > object.destX + object.destW / 2 &&
-        player.y < object.destY + object.destH / 2 &&
-        player.y + player.height > object.destY
+        player.x < object.x + object.width / 2 &&
+        player.x + player.width > object.x + object.width / 2 &&
+        player.y < object.y + object.height / 2 &&
+        player.y + player.height > object.y
       );
     }
   }
@@ -79,15 +79,15 @@ class Game {
   gameOver() {
     this.ctx.save();
     this.ctx.fillStyle = "rgba(255, 165, 0, 0.5)";
-    this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+    this.ctx.fillRect(0, 0, this.width, this.height);
     this.ctx.fillStyle = "#222222";
-    this.ctx.font = "Sen bold 40pt";
+    this.ctx.font = "italic small-caps bold 12px Sen";
 
-    this.ctx.fillText(`GAME OVER!`, this.canvas.width / 2, this.canvas.height - 80);
+    this.ctx.fillText(`GAME OVER!`, this.width / 2, this.height - 80);
     this.ctx.fillText(
       `YOU AVOIDED ${this.scoreArray.length} OBSTACLE(S)`,
-      this.canvas.width / 2,
-      this.canvas.height / 2
+      this.width / 8,
+      100
     );
 
     this.ctx.restore();
@@ -96,24 +96,19 @@ class Game {
 
   animation() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    this.ctx.save();
     this.draw();
     this.update();
     this.animationId = window.requestAnimationFrame(() => {
       if (this.gameStatus === "game") {
-        document.querySelector('body').classList.remove("over");
         document.querySelector('body').classList.add("gameOn");
         this.animation();
       }
       if (this.gameStatus === "game-over") {
         window.cancelAnimationFrame(this.animationId);
-        document.querySelector('body').classList.remove("gameOn");
-        document.querySelector('body').classList.add("over");
+        document.querySelector('body').classList.add("gameOn");
         this.gameOver();
       }
     });
-
-    this.ctx.restore();
   }
 
   update() {
@@ -122,7 +117,7 @@ class Game {
     this.player.update();
     //Append obstacles being created into array
     if (this.frame % 120 === 0) {
-      this.obstaclesArray.push(new Obstacles(this));
+      this.obstaclesArray.push(new ObstaclePipes(this));
     }
     this.obstaclesExistence();
   }

@@ -122,7 +122,7 @@ class Game {
     this.player.update();
     //Append obstacles being created into array
     if (this.frame % 120 === 0) {
-      this.obstaclesArray.push(new Obstacles(this));
+      this.obstaclesArray.push(new ObstaclePipes(this));
     }
     this.obstaclesExistence();
   }
