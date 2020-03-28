@@ -39,7 +39,7 @@ class Game {
     this.sound.style.display = "none";
     document.body.appendChild(this.sound);
     this.sound.src = src;
-    this.sound.volume = 0.02;
+    this.sound.volume = 0.2;
   }
 
   start() {
