@@ -46,6 +46,7 @@ class Player {
   }
 
   setControls() {
+    
     window.addEventListener("keydown", event => {
       /*
       if (event.keyCode === 38) {
@@ -62,7 +63,7 @@ class Player {
         this.speedX = 10;
       }
 
-      if (event.keyCode === 32) {
+      if (event.keyCode === 38) {
         event.preventDefault();
         //console.log("pressed");
         this.update();
@@ -75,7 +76,8 @@ class Player {
     });
 
     window.addEventListener("keyup", event => {
-      if (event.keyCode === 32) {
+      //space bar is 32
+      if (event.keyCode === 38) {
         event.preventDefault();
         this.speedY = -1 * this.gravity;
       }
