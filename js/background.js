@@ -9,7 +9,7 @@ class infiniteBackground {
     //this.height = 150;//504
     this.width = window.innerWidth; //900
     this.height = window.innerHeight; //504
-    this.scrollSpeed = 0.5;
+    this.scrollSpeed = 1.5
 
     this.image = new Image();
 

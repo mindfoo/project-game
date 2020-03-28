@@ -51,8 +51,9 @@ class Game {
       this.sound("./sounds/game.mp3");
       this.sound.play();
     }
+    // YESSSS RESTART WORKSSSS
     if (this.gameStatus === "game-over") {
-      new Game(canvas).gameStatus = "game";
+      new Game(canvas).start();
     }
   }
 
